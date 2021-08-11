@@ -12,6 +12,19 @@ import Title from './Title';
 class Header extends ε.Component {
 
   render() {
+    return {
+      name: "div",
+      attributes: {"class": "w-full flex justify-center items-center border-2 bg-gray-300"},
+      children: [
+        {
+          name: "Title",
+          attributes: {"type": "h1"},
+          textContent: "HELLO WORLD",
+        }
+      ]
+    }
+    let node = document.querySelector("#root");
+    node.innerHTML = header;
     console.log('Hello');
   }
 }

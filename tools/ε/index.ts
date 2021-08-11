@@ -2,7 +2,15 @@ import { Element } from './frameworkTypes';
 
 // parent class for components
 abstract class Component {
-  abstract render(): Element
+  abstract render(): Element // la fonction rend un objet de type Element
+}
+
+function createElement(name, attributes, children) {
+  return {
+    name,
+    attributes,
+    children
+  }
 }
 
 function start(rootComponent, rootHtml: HTMLElement): void {
@@ -13,5 +21,5 @@ function start(rootComponent, rootHtml: HTMLElement): void {
 
 export {
   Component,
-  start
+  start, createElement
 };

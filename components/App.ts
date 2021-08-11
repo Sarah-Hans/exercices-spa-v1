@@ -9,7 +9,18 @@ class App extends ε.Component {
   //     <div>
   //       <Header />
   //     </div>
-  render() {}
+  render() {
+  return  {
+      name: "div",
+      children: [
+        {
+          name: Header,
+          children: [],
+          
+        }
+      ]
+    }
+  }
 }
 
 export default App;
