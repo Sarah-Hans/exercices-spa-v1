@@ -2,6 +2,10 @@ import { Element } from './frameworkTypes';
 
 // parent class for components
 abstract class Component {
+  props = {}
+  constructor (props) {
+    this.props = props
+  }
   abstract render(): Element // la fonction rend un objet de type Element
 }
 
@@ -48,7 +52,7 @@ function getElement(element) {
     element.children = childrenCol;
     elementToReturn = element;
   } else {
-    const instance = new element.name();
+    const instance = new element.name({...element.attributes, children : element.children});
     const render = instance.render();
     elementToReturn = getElement(render);
   }
@@ -67,6 +71,8 @@ function start(rootComponent, rootHtml: HTMLElement): void {
   const virtualDom = getVirtualDom(rootRender);
   const site = elementsToHTML(virtualDom);
   console.log(site);
+  console.log(rootHtml)
+  rootHtml.appendChild(site)
 }
 
 export {
