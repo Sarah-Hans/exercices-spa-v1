@@ -9,24 +9,19 @@ import Title from './Title';
   //       <Title type="h1" >HELLO WORLD</Title>
   //     </div>
 
-class Header extends ε.Component {
+  class Header extends ε.Component {
 
-  render() {
-    return {
-      name: "div",
-      attributes: {"class": "w-full flex justify-center items-center border-2 bg-gray-300"},
-      children: [
-        {
-          name: "Title",
-          attributes: {"type": "h1"},
-          textContent: "HELLO WORLD",
-        }
-      ]
+    render() {
+      return ε.createElement(
+          'div',
+          {
+            class: "w-full flex justify-center items-center border-2 bg-gray-300",
+          },
+          [
+            ε.createElement(Title,{type: "h1"}, ["Hello world"])
+          ]
+        )
     }
-    let node = document.querySelector("#root");
-    node.innerHTML = header;
-    console.log('Hello');
   }
-}
 
 export default Header;
