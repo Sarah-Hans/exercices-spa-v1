@@ -4,7 +4,6 @@ import * as ε from '../tools/ε/';
 import Header from './Header';
 
 class App extends ε.Component {
-
   render() {
     return ε.createElement(
       'div',
